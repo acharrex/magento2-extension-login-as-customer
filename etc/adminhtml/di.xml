@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Shopigo. All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Customer\Ui\Component\Listing\Column\Actions">
+        <plugin name="shopigo_loginascustomer_customer_listing_add_action" type="Shopigo\LoginAsCustomer\Plugin\Ui\Component\Listing\Column\CustomerActionsPlugin" sortOrder="10"/>
+    </type>
+    <type name="Magento\Backend\Block\Widget\Context">
+        <plugin name="shopigo_loginascustomer_add_login_button" type="Shopigo\LoginAsCustomer\Plugin\Backend\Sales\Order\Detail\AddLoginButtonPlugin" sortOrder="10"/>
+    </type>
+</config>
