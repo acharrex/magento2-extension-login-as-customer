@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Shopigo. All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Shopigo\LoginAsCustomer\Api\Data\LogSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <preference for="Shopigo\LoginAsCustomer\Api\Data\TokenSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <preference for="Shopigo\LoginAsCustomer\Api\Data\LogInterface" type="Shopigo\LoginAsCustomer\Model\Log"/>
+    <preference for="Shopigo\LoginAsCustomer\Api\Data\TokenInterface" type="Shopigo\LoginAsCustomer\Model\Token"/>
+    <preference for="Shopigo\LoginAsCustomer\Api\LogRepositoryInterface" type="Shopigo\LoginAsCustomer\Model\LogRepository"/>
+    <preference for="Shopigo\LoginAsCustomer\Api\TokenRepositoryInterface" type="Shopigo\LoginAsCustomer\Model\TokenRepository"/>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="shopigo_loginascustomer_log_listing_data_source" xsi:type="string">Shopigo\LoginAsCustomer\Model\ResourceModel\Log\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Shopigo\LoginAsCustomer\Model\ResourceModel\Log\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">shopigo_loginascustomer_log</argument>
+            <argument name="eventPrefix" xsi:type="string">shopigo_loginascustomer_log_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">shopigo_loginascustomer_log_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Shopigo\LoginAsCustomer\Model\ResourceModel\Log</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Model\Entity\RepositoryFactory">
+        <arguments>
+            <argument name="entities" xsi:type="array">
+                <item name="Shopigo\LoginAsCustomer\Api\Data\LogInterface" xsi:type="string">Shopigo\LoginAsCustomer\Api\LogRepositoryInterface</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\EntityManager\MetadataPool">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+                <item name="Shopigo\LoginAsCustomer\Api\Data\LogInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">shopigo_loginascustomer_log</item>
+                    <item name="identifierField" xsi:type="string">log_id</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\EntityManager\HydratorPool">
+        <arguments>
+            <argument name="hydrators" xsi:type="array">
+                <item name="Shopigo\LoginAsCustomer\Api\Data\LogInterface" xsi:type="string">Magento\Framework\EntityManager\AbstractModelHydrator</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

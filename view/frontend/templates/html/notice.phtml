@@ -1,0 +1,28 @@
+<?php
+/**
+ * Copyright © Shopigo. All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ */
+
+// @codingStandardsIgnoreFile
+?>
+<?php
+/**
+ * @var $block \Shopigo\LoginAsCustomer\Block\Html\Notice
+ */
+?>
+<div class="message global loginascustomer">
+    <div class="content">
+        <p>
+            <?= /* @escapeNotVerified */ __('You are logged in as customer: <strong>%1 (%2)</strong>', $block->getCustomerName(), $block->getCustomerEmail()) ?>
+        </p>
+        <p class="actions">
+            <a class="action logout" href="<?= /* @escapeNotVerified */ $block->getLogoutUrl() ?>">
+                <span><?= /* @escapeNotVerified */ __('Sign Out') ?></span>
+            </a>
+            <a class="action open-backend" href="<?= /* @escapeNotVerified */ $block->getBackendUrl() ?>" target="_blank">
+                <span><?= /* @escapeNotVerified */ __('Open Admin') ?></span>
+            </a>
+        </p>
+    </div>
+</div>

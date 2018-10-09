@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="shopigo_loginascustomer_log_cron_error_email_template" label="Logs Cron Error Warning" file="log_cron_error.html" type="text" module="Shopigo_LoginAsCustomer" area="adminhtml"/>
+</config>

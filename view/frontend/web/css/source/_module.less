@@ -1,0 +1,47 @@
+/**
+ * Copyright © Shopigo. All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ */
+ 
+//
+//    Common
+//--------------------------------------
+
+& when (@media-common = true) {
+
+    //
+    //  Global notice
+    //  ---------------------------------------------
+
+    .message.global {
+        &.loginascustomer {
+            .lib-message(@_message-type: global-note);
+
+            margin: 0;
+            text-align: center;
+            
+            .actions {
+                margin-top: 2px;
+            
+                .action {
+                    &:after {
+                        .lib-css(border-left, 1px solid @primary__color__light);
+                        
+                        content: "";
+                        display: inline-block;
+                        height: 12px;
+                        margin: 0 @indent__s;
+                        vertical-align: -1px;
+                    }
+                    
+                    &:last-child {
+                        &:after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

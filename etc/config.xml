@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Shopigo. All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <advanced>
+            <modules_disable_output>
+                <Shopigo_LoginAsCustomer>1</Shopigo_LoginAsCustomer>
+            </modules_disable_output>
+        </advanced>
+        <shopigo_loginascustomer>
+            <general>
+                <enabled>0</enabled>
+                <log_enabled>1</log_enabled>
+                <redirect_url>customer/account</redirect_url>
+                <cutomer_grid_btn_enabled>1</cutomer_grid_btn_enabled>
+                <cutomer_edit_btn_enabled>1</cutomer_edit_btn_enabled>
+                <order_view_btn_enabled>1</order_view_btn_enabled>
+                <checkout_enabled>1</checkout_enabled>
+                <checkout_message/>
+            </general>
+            <log_cron>
+                <enabled>1</enabled>
+                <clean_after_day>15</clean_after_day>
+                <frequency>D</frequency>
+                <time>00,00,00</time>
+                <error_email/>
+                <error_email_identity>general</error_email_identity>
+                <error_email_template>shopigo_loginascustomer_log_cron_error_email_template</error_email_template>
+            </log_cron>
+        </shopigo_loginascustomer>
+    </default>
+</config>

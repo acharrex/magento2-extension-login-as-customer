@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Shopigo. All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="shopigo" translate="label" sortOrder="500" class="shopigo-extensions">
+            <label>Shopigo Extensions</label>
+        </tab>
+        <section id="shopigo_loginascustomer" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Login as Customer</label>
+            <tab>shopigo</tab>
+            <resource>Shopigo_LoginAsCustomer::config</resource>
+            <group id="general" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="enabled" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Enable Login as Customer</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="log_enabled" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Save Login Logs</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="redirect_url" translate="label tooltip comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Redirect URL After Login</label>
+                    <tooltip>URL where the admin user will be redirected after clicking on the "Login as Customer" button.</tooltip>
+                    <comment>Relative or absolute URL. By default 'customer/account'.</comment>
+                </field>
+                <field id="cutomer_grid_btn_enabled" translate="label" type="select" sortOrder="15" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Enable Login Button In Customers Grid</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="cutomer_edit_btn_enabled" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Enable Login Button In Customer Information Page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="order_view_btn_enabled" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Enable Login Button In Order Detail Page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="checkout_enabled" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Enable Checkout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>On frontend, authorize administrators to place an order for customers.</comment>
+                </field>
+                <field id="checkout_message" translate="label comment" sortOrder="35" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Warning Message</label>
+                    <comment>This message will be shown in the shopping cart when the checkout is disabled.</comment>
+                    <depends>
+                        <field id="checkout_enabled">0</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="log_cron" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                <label>Logs Cleaning</label>
+                <field id="enabled" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Enable Logs Cleaning</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="clean_after_day" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Save Logs, Days</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="frequency" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Frequency</label>
+                    <source_model>Magento\Cron\Model\Config\Source\Frequency</source_model>
+                    <backend_model>Shopigo\LoginAsCustomer\Model\Config\Backend\Cron</backend_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="time" translate="label" type="time" sortOrder="15" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Start Time</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="error_email" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Error Email Recipient</label>
+                    <validate>validate-email</validate>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="error_email_identity" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Error Email Sender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="error_email_template" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Error Email Template</label>
+                    <comment>Email template chosen based on theme fallback when "Default" option is selected.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
