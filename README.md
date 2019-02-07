@@ -1,6 +1,6 @@
-[![Shopigo](https://www.shopigo.ch/wp-content/uploads/2018/08/github-shopigo-logo.png)](https://www.shopigo.ch)
+![Shopigo](https://i.imgur.com/7Ctkn7X.png)
 
-# Magento 2 Login as Customer extension by [Shopigo](https://www.shopigo.ch)
+# Magento 2 Login as Customer extension by Shopigo
 
 This extension allows the store owner to enter any customer account by using Magento admin panel, and in only one click!
 
@@ -14,7 +14,7 @@ Aside from being able to login as a customer without asking for any kind of cred
 
 ## Requirements
 
-Magento Open Source Edition 2.2.x.
+Magento Open Source Edition 2.2 or 2.3
 
 ## Installation
 
@@ -25,7 +25,7 @@ Magento Open Source Edition 2.2.x.
 
 ## Method 2 - Installing using archive
 
-- Download [ZIP Archive](https://github.com/shopigo/magento2-extension-login-as-customer/archive/master.zip)
+- Download [ZIP Archive](https://github.com/acharrex/magento2-extension-login-as-customer/archive/master.zip)
 - Switch to your Magento project root
 - Create folder `app/code/Shopigo/LoginAsCustomer`
 - Extract zip into path
@@ -53,37 +53,40 @@ php bin/magento setup:static-content:deploy
 
 ### Login as Customer button in the customers grid
 
-![Login as Customer button in the customers grid](https://www.shopigo.ch/wp-content/uploads/2018/10/github-extension-login-as-customer-customers-grid.jpg)
+![Login as Customer button in the customers grid](https://i.imgur.com/yjXGuUa.jpg)
 
 ### Login as Customer button in the customer information page
 
-![Login as Customer button in the customer information page](https://www.shopigo.ch/wp-content/uploads/2018/10/github-extension-login-as-customer-customer-view.jpg)
+![Login as Customer button in the customer information page](https://i.imgur.com/R2qHAys.jpg)
 
 ### Login as Customer button in the order detail page
 
-![Login as Customer button in the order detail page](https://www.shopigo.ch/wp-content/uploads/2018/10/github-extension-login-as-customer-order-view.jpg)
+![Login as Customer button in the order detail page](https://i.imgur.com/ZBJMJ8t.jpg)
 
 ### Info bar displayed when an admin user visits your store under customer profile
 
-![Info bar displayed when an admin user visits your store under customer profile](https://www.shopigo.ch/wp-content/uploads/2018/10/github-extension-login-as-customer-customer-dashboard.jpg)
+![Info bar displayed when an admin user visits your store under customer profile](https://i.imgur.com/TwjnOw7.jpg)
 
 ### Message displayed when the checkout is disabled for the current admin user
 
-![Message displayed when the checkout is disabled for the current admin user](https://www.shopigo.ch/wp-content/uploads/2018/10/github-extension-login-as-customer-cart.jpg)
+![Message displayed when the checkout is disabled for the current admin user](https://i.imgur.com/uOSxPG2.jpg)
 
 ### Entrance logins history
 
-![Entrance logins history](https://www.shopigo.ch/wp-content/uploads/2018/10/github-extension-login-as-customer-login-logs.jpg)
+![Entrance logins history](https://i.imgur.com/WuaqJvi.jpg)
 
 ### Extension settings
 
-![Extension settings](https://www.shopigo.ch/wp-content/uploads/2018/10/github-extension-login-as-customer-settings.jpg)
+![Extension settings](https://i.imgur.com/hVczYll.jpg)
 
 ## Support
 
-If you have any issues, open a bug report in GitHub's [issue tracker](https://github.com/shopigo/magento2-extension-login-as-customer/issues).
+If you have any issues, open a bug report in GitHub's [issue tracker](https://github.com/acharrex/magento2-extension-login-as-customer/issues).
 
 ## Change logs
+
+**Version 1.0.1** (2019-02-07)
+- Fix composer.json for Magento 2.3
 
 **Version 1.0.0** (2018-10-09)
 - First version
@@ -92,5 +95,4 @@ If you have any issues, open a bug report in GitHub's [issue tracker](https://gi
 
 The code is licensed under [Open Software License ("OSL") v. 3.0](http://opensource.org/licenses/osl-3.0.php).
 
-<br/>Enjoy!<br/>
-[Shopigo](https://www.shopigo.ch)
+<br/>Enjoy!
